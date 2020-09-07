@@ -7,3 +7,10 @@ export function addToCart(cartItem) {
         payload: cartItem
     };
 }
+
+export function removeFromCart(product) {
+    return {
+        type: actionTypes.REMOVE_FROM_CART,
+        payload: product
+    };
+}
