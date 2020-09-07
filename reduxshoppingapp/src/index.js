@@ -1,18 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import App from './components/root/App';
 import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {Provider} from 'react-redux';
+import configStore from './redux/reducers/configStore';
 import 'alertifyjs/build/css/alertify.min.css';
-import {BrowserRouter} from 'react-router-dom';
+
+const store=configStore();
 
 ReactDOM.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </React.StrictMode>,
+  <Provider store={store}>
+  <App />
+ </Provider>,
   document.getElementById('root')
 );
 
