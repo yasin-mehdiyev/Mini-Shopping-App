@@ -3,16 +3,20 @@ import ReactDOM from 'react-dom';
 import App from './components/root/App';
 import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Provider} from 'react-redux';
+import { Provider } from 'react-redux';
 import configStore from './redux/reducers/configStore';
 import 'alertifyjs/build/css/alertify.min.css';
+import { BrowserRouter } from 'react-router-dom';
 
-const store=configStore();
+
+const store = configStore();
 
 ReactDOM.render(
-  <Provider store={store}>
-  <App />
- </Provider>,
+  <BrowserRouter>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </BrowserRouter>,
   document.getElementById('root')
 );
 

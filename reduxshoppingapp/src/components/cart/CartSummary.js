@@ -12,6 +12,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as cartActions from '../../redux/actions/cartActions';
 import alertify from 'alertifyjs';
+import { Link } from 'react-router-dom';
 
 class CartSummary extends Component {
 
@@ -23,7 +24,7 @@ class CartSummary extends Component {
     isCartEmpty() {
         return (
             <NavItem>
-                <NavLink href="/components/">Cart is empty</NavLink>
+                <NavLink>Cart is empty</NavLink>
             </NavItem>
         )
     }
@@ -63,7 +64,7 @@ class CartSummary extends Component {
                     <DropdownItem divider />
 
                     <DropdownItem>
-                        Cart Details
+                        <Link to="carts">Cart Details</Link>
                    </DropdownItem>
 
                 </DropdownMenu>
